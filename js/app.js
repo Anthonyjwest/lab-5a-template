@@ -8,9 +8,9 @@ Write a function called sum() that takes in two numbers as arguments and then re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
 
 // Write your code here
- function sum(testArray) { //eslint-disable-line
-  let x = testArray[0] + testArray[1] + testArray[2];
-  return x;
+function sum(a, b) { //eslint-disable-line
+  let z = a + b;
+  return [z, `The sum of ${a} and ${b} is ${z}.`];
 }
 
 // Here is the test for sum(); uncomment it to run it
@@ -27,9 +27,9 @@ Write a function called multiply() that takes in two numbers as arguments and re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
 // Write your code here
- function multiply(multArr) { //eslint-disable-line
-  let x = multArr[0] * multArr[1] * multArr[2];
-  return x;
+ function multiply(a, b) { //eslint-disable-line
+  let x = a * b;
+  return [x, `The product of ${a} and ${b} is ${x}.`];
 }
 
 // Here is the test for multiply(); uncomment it to run it
@@ -50,8 +50,8 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-  let z = sum(a, b, c);
-  let m = multiply(a, b, c);
+  let z = sum(a, b)[0] + c;
+  let m = multiply(a, b)[0] * c;
   return [z, m, `${a} and ${b} and ${c} sum to ${z}.`, `The product of ${a} and ${b} and ${c} is ${m}.`];
 }
 
@@ -74,7 +74,7 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(testArray) { //eslint-disable-line
-  let x = sum(testArray);
+  let x = sum(testArray[0], testArray[1])[0] + testArray[2];
   return[x, `${testArray} was passed in as an array of numbers, and ${x} is their sum.`];
 }
 
@@ -100,7 +100,7 @@ Test this function by hand in the console to get it working, and when you think 
 let multArr = [2, 3, 4];
 
 function multiplyArray(multArr) { //eslint-disable-line
-  let x = multiply(multArr);
+  let x = multiply(multArr[0], multArr[1])[0] * multArr[2];
   return[x, `The numbers ${multArr} have a product of ${x}.`];
 
 }

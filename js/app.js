@@ -27,8 +27,8 @@ Write a function called multiply() that takes in two numbers as arguments and re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
 // Write your code here
- function multiply(a, b, c) { //eslint-disable-line
-  let x = a * b * c;
+ function multiply(multArr) { //eslint-disable-line
+  let x = multArr[0] * multArr[1] * multArr[2];
   return x;
 }
 
@@ -95,14 +95,20 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
+
+// eslint-disable-next-line no-unused-vars
+let multArr = [2, 3, 4];
+
 function multiplyArray(multArr) { //eslint-disable-line
+  let x = multiply(multArr);
+  return[x, `The numbers ${multArr} have a product of ${x}.`];
 
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyArray(testArray);
 
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
+// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
 // You're done! Submit the link to the repo following the instructions in Canvas. Or, try out the stretch goal below...
 
